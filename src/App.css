@@ -1,3 +1,6 @@
+.App {
+  padding: 0px 12px;
+}
 .item-container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -15,4 +18,11 @@ h1 {
 
 .item-container p {
   text-align: center;
+}
+
+.title-container {
+  width: 100%;
+  display: flex;
+  justify-self: center;
+  flex-direction: column;
 }

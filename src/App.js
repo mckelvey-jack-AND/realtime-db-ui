@@ -40,7 +40,9 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Data</h1>
+      <div className="title-container">
+        <h1>Data</h1>
+      </div>
       <div className="item-container">
         <p className="header">Browser</p>
         <p className="header">Vm-id</p>
