@@ -32,10 +32,10 @@ function App() {
         ...doc.data(),
       }));
 
-      setData(data); // Update the state with ordered data
+      setData(data);
     });
 
-    return () => unsubscribe(); // Cleanup function to unsubscribe on unmount
+    return () => unsubscribe();
   }, []);
 
   return (
