@@ -1,5 +1,3 @@
-/* eslint-disable react-hooks/exhaustive-deps */
-
 import "./App.css";
 import { initializeApp } from "firebase/app";
 import { getFirestore, onSnapshot, orderBy, query } from "firebase/firestore";
@@ -17,7 +15,6 @@ const firebaseConfig = {
   measurementId: "G-SM1YY5E32P",
 };
 
-// Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
@@ -31,7 +28,6 @@ function App() {
         id: doc.id,
         ...doc.data(),
       }));
-
       setData(data);
     });
 
@@ -45,14 +41,14 @@ function App() {
       </div>
       <div className="item-container">
         <p className="header">Browser</p>
-        <p className="header">Vm-id</p>
+        <p className="header">IP Address</p>
         <p className="header">TimeStamp</p>
       </div>
       {data.map((item) => {
         return (
           <div className="item-container" key={item.id}>
             <p>{item.browser}</p>
-            <p>{item["vm-id"]}</p>
+            <p>{item.ipAddress}</p>
             <p>
               {formatDate(item.createdAt.seconds, item.createdAt.nanoseconds)}
             </p>
