@@ -31,7 +31,7 @@ function App() {
         <p className="header">Browser</p>
         <p className="header">IP Address</p>
         <p className="header">TimeStamp</p>
-        <p>In Use</p>
+        <p className="header">In Use</p>
       </div>
       {data.map((item) => {
         return (
