@@ -3,9 +3,10 @@
 }
 .item-container {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   justify-content: space-around;
   border-bottom: 1px solid gray;
+  padding: 4px 0px;
 }
 
 h1 {
@@ -25,4 +26,26 @@ h1 {
   display: flex;
   justify-self: center;
   flex-direction: column;
+}
+
+.in-use-button-container {
+  display: flex;
+  justify-content: center;
+}
+
+.in-use-button {
+  background: none;
+  border: none;
+  padding: 16px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.inactive {
+  background: red;
+  color: white;
+}
+
+.active {
+  background: green;
 }
