@@ -1,6 +1,13 @@
 import { useEffect, useState } from "react";
 import { formatDate } from "../formatDate";
-import { doc, getFirestore, updateDoc } from "firebase/firestore";
+import {
+  collection,
+  doc,
+  getFirestore,
+  onSnapshot,
+  query,
+  updateDoc,
+} from "firebase/firestore";
 import { initializeApp } from "firebase/app";
 import { update, ref as sref } from "firebase/database";
 import { db } from "../firebaseConfig";
@@ -20,6 +27,26 @@ export const ListItem = ({ id, browser, ipAddress, createdAt, isActive }) => {
       console.error("Error updating data: ", error);
     }
   };
+
+  useEffect(() => {
+    const q = query(collection(db, "vm-hit"));
+
+    onSnapshot(q, (snapshot) => {
+      const data = snapshot.docs.map((doc) => ({
+        id: doc.id,
+        ...doc.data(),
+      }));
+
+      const foundItem = data.find((item) => {
+        return item.id === id;
+      });
+
+      if (foundItem) {
+        console.log();
+        setIsActiveState(foundItem.isActive);
+      }
+    });
+  });
 
   return (
     <div className="item-container" key={id}>
