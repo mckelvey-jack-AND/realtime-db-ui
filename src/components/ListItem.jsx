@@ -3,13 +3,10 @@ import { formatDate } from "../formatDate";
 import {
   collection,
   doc,
-  getFirestore,
   onSnapshot,
   query,
   updateDoc,
 } from "firebase/firestore";
-import { initializeApp } from "firebase/app";
-import { update, ref as sref } from "firebase/database";
 import { db } from "../firebaseConfig";
 
 export const ListItem = ({ id, browser, ipAddress, createdAt, isActive }) => {

@@ -44,8 +44,10 @@ h1 {
 .inactive {
   background: red;
   color: white;
+  transition: all 0.2s ease-in-out;
 }
 
 .active {
   background: green;
+  transition: all 0.2s ease-in-out;
 }

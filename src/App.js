@@ -1,6 +1,5 @@
 import "./App.css";
-import { initializeApp } from "firebase/app";
-import { getFirestore, onSnapshot, orderBy, query } from "firebase/firestore";
+import { onSnapshot, orderBy, query } from "firebase/firestore";
 import { collection } from "firebase/firestore";
 import { useEffect, useState } from "react";
 import { ListItem } from "./components/ListItem";
